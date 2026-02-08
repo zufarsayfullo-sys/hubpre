@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Intermediate Hub | Mr Zufar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617; color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* High-Quality Background */
+        .bg-fixed {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), 
+                        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; z-index: -1;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+
+        h1 { font-size: 3rem; margin-bottom: 5px; font-weight: 700; color: #f8fafc; }
+        .level-tag { background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; display: inline-block; }
+        .creator-tag { font-weight: 300; font-size: 1.2rem; color: #94a3b8; margin-bottom: 50px; }
+
+        /* Main Category Selection */
+        .category-nav {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin-bottom: 40px;
+        }
+
+        .nav-card {
+            background: var(--glass); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); padding: 30px;
+            border-radius: 20px; cursor: pointer; transition: 0.3s;
+        }
+
+        .nav-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); border-color: var(--primary); }
+        .nav-card i { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary); }
+
+        /* Quiz Grid Sections */
+        .quiz-section {
+            display: none; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px; animation: fadeIn 0.5s ease forwards;
+            margin-top: 20px; border-top: 1px solid var(--glass-border); padding-top: 30px;
+        }
+
+        .quiz-card {
+            background: rgba(15, 23, 42, 0.6); border-radius: 15px;
+            overflow: hidden; border: 1px solid var(--glass-border);
+            text-decoration: none; color: white; transition: 0.3s;
+        }
+
+        .quiz-card:hover { transform: scale(1.05); border-color: var(--primary); background: rgba(30, 41, 59, 0.8); }
+
+        .quiz-img {
+            width: 100%; height: 120px; object-fit: cover;
+            filter: brightness(0.7); transition: 0.3s;
+        }
+
+        .quiz-card:hover .quiz-img { filter: brightness(1); }
+
+        .quiz-info { padding: 15px; font-weight: 600; font-size: 0.9rem; text-align: left; }
+
+        /* Helpers */
+        .active-section { display: grid !important; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    </style>
+</head>
+<body>
+
+<div class="bg-fixed"></div>
+
+<div class="container">
+    <div class="level-tag">A2 / B1</div>
+    <h1>Pre-Intermediate Hub</h1>
+    <p class="creator-tag">Platform created by Mr Zufar</p>
+
+    <div class="category-nav">
+        <div class="nav-card" onclick="openAspect('grammar')">
+            <i class="fas fa-book"></i>
+            <h3>Grammar</h3>
+        </div>
+        <div class="nav-card" onclick="openAspect('vocabulary')">
+            <i class="fas fa-spell-check"></i>
+            <h3>Vocabulary</h3>
+        </div>
+        <div class="nav-card" onclick="window.open('https://zufarsayfullo-sys.github.io/Speakingpre/', '_blank')">
+            <i class="fas fa-comment-dots"></i>
+            <h3>Speaking</h3>
+        </div>
+    </div>
+
+    <div id="grammar" class="quiz-section">
+        <a href="https://zufarsayfullo-sys.github.io/Modalspre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=400" class="quiz-img">
+            <div class="quiz-info">Will / Might</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/modals1/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400" class="quiz-img">
+            <div class="quiz-info">Modals</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/Pasttenses/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1506784919141-935269295171?w=400" class="quiz-img">
+            <div class="quiz-info">Past Simple vs Continuous</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/condfirst/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1516533075015-a3838414c3ca?w=400" class="quiz-img">
+            <div class="quiz-info">1st Conditional</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/passpre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?w=400" class="quiz-img">
+            <div class="quiz-info">Passive Voice</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/preusedto/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1520004434532-6684162097cf?w=400" class="quiz-img">
+            <div class="quiz-info">Used To</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/cond2pre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400" class="quiz-img">
+            <div class="quiz-info">2nd Conditional</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/preperfectpre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=400" class="quiz-img">
+            <div class="quiz-info">Present Perfect</div>
+        </a>
+    </div>
+
+    <div id="vocabulary" class="quiz-section">
+        <a href="https://zufarsayfullo-sys.github.io/Transportpre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400" class="quiz-img">
+            <div class="quiz-info">Transport</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/make-dopre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1589561253898-768105ca9118?w=400" class="quiz-img">
+            <div class="quiz-info">Make or Do</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/Prepositions/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=400" class="quiz-img">
+            <div class="quiz-info">Prepositions</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/phrasalverbspre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400" class="quiz-img">
+            <div class="quiz-info">Phrasal Verbs</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/contrastlinkerspre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400" class="quiz-img">
+            <div class="quiz-info">Linkers</div>
+        </a>
+        <a href="https://zufarsayfullo-sys.github.io/workpre/" target="_blank" class="quiz-card">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400" class="quiz-img">
+            <div class="quiz-info">Work Vocabulary</div>
+        </a>
+    </div>
+
+</div>
+
+<script>
+    function openAspect(id) {
+        const sections = document.querySelectorAll('.quiz-section');
+        sections.forEach(sec => sec.classList.remove('active-section'));
+        
+        const target = document.getElementById(id);
+        target.classList.add('active-section');
+        
+        setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+</script>
+
+</body>
+</html>
